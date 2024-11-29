@@ -17,8 +17,11 @@ public class MineTest {
      *
      * Called before every test case method.
      */
+    Mine mine;
+    
     @BeforeEach
     public void setUp() {
+        
     }
 
     /**
@@ -32,14 +35,14 @@ public class MineTest {
     
     @Test
     public void tesPositionFromMineInZeroZero() {
-        Mine mine = new Mine(0, 0);
+        mine = new Mine(0, 0);
         String pos = mine.getPosition();
         assertEquals("0, 0", pos);
     }
     
     @Test
     public void tesPositionFromMineInZeroOne() {
-        Mine mine = new Mine(0, 1);
+        mine = new Mine(0, 1);
         String pos = mine.getPosition();
         assertEquals("0, 1", pos);
     }
