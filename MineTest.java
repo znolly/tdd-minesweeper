@@ -31,7 +31,7 @@ public class MineTest {
     }
     
     @Test
-    public void testPosition() {
+    public void tesPositionFromMineInZeroZero() {
         Mine mine = new Mine(0, 0);
         String pos = mine.getPosition();
         assertEquals("0, 0", pos);
