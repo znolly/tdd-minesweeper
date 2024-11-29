@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Mine
+comment0.text=\r\n\ Write\ a\ description\ of\ Mine\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=posX\ posY
+comment1.target=Mine(int,\ int)
+comment2.params=
+comment2.target=java.lang.String\ getPosition()
+numComments=3
