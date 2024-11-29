@@ -56,4 +56,12 @@ public class MineTest {
             assertEquals("The coordinate must not be negative", e.getMessage());
         }
     }
+    
+    @Test
+    public void testIsActive() {
+        mine = new Mine(5, 5);
+        mine.setActive();
+        boolean res = mine.isActive();
+        assertEquals(true, res);
+    }
 }

@@ -10,11 +10,13 @@
 public class Mine {
     private int posX;
     private int posY;
+    private boolean isActive;
     
     public Mine(int posX, int posY) {  
         validateCoordinates(posX, posY);
         this.posX = posX;
         this.posY = posY;
+        isActive = false;
     }
     
     public String getPosition() {
@@ -25,5 +27,13 @@ public class Mine {
         if (posX < 0 || posY < 0) {
             throw new RuntimeException("The coordinate must not be negative");
         }
+    }
+    
+    public void setActive() {
+        isActive = true;
+    }
+    
+    public boolean isActive() {
+        return isActive;
     }
 }
