@@ -34,16 +34,26 @@ public class MineTest {
     }
     
     @Test
-    public void tesPositionFromMineInZeroZero() {
+    public void testPositionFromMineInZeroZero() {
         mine = new Mine(0, 0);
         String pos = mine.getPosition();
         assertEquals("0, 0", pos);
     }
     
     @Test
-    public void tesPositionFromMineInZeroOne() {
+    public void testPositionFromMineInZeroOne() {
         mine = new Mine(0, 1);
         String pos = mine.getPosition();
         assertEquals("0, 1", pos);
+    }
+    
+    @Test
+    public void testConstructorWithNegativeValue() {
+        try {
+            mine = new Mine(-1, -1);
+            fail("RuntimeException expected");
+        } catch (RuntimeException e) {
+            assertEquals("The coordinate must not be negative", e.getMessage());
+        }
     }
 }

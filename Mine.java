@@ -1,20 +1,29 @@
 
 /**
- * Write a description of Mine here.
+ * It is part of the project tdd-minesweeper
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The Mine class represents a mine with a specific position on a grid.
+ * 
+ * @author Team_JavaVerse 
+ * @version 29-11-24
  */
 public class Mine {
     private int posX;
     private int posY;
     
-    public Mine(int posX, int posY) {
+    public Mine(int posX, int posY) {  
+        validateCoordinates(posX, posY);
         this.posX = posX;
         this.posY = posY;
     }
     
     public String getPosition() {
         return posX + ", " + posY;
+    }
+    
+    private void validateCoordinates(int posX, int posY) {
+        if (posX < 0 || posY < 0) {
+            throw new RuntimeException("The coordinate must not be negative");
+        }
     }
 }
