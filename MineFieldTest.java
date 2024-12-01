@@ -19,8 +19,13 @@ public class MineFieldTest {
      *
      * Called before every test case method.
      */
+    private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+    MineField minefield;
+    
     @BeforeEach
     public void setUp() {
+        System.setOut(new PrintStream(outputStream));
     }
 
     /**
@@ -33,21 +38,23 @@ public class MineFieldTest {
     }
     
     @Test
-    public void testPrintAllMineField3Rows3Cols2Mines() {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream originalOut = System.out;
-        System.setOut(new PrintStream(outputStream));
-        
-        MineField minefield = new MineField(3, 3, 2);
-        
+    public void testPrintAllMineField3Rows3Cols9Mines() {
+        MineField minefield = new MineField(3, 3, 9);
+        String expectedOutput = "* * * \r\n* * * \r\n* * * \r\n";
+        assertPrintedGrid(minefield, expectedOutput);
+    }
+    
+    @Test
+    public void testPrintAllMineField4Rows4Cols16Mines() {
+        minefield = new MineField(4, 4, 16);
+        String expectedOutput = "* * * * \r\n* * * * \r\n* * * * \r\n* * * * \r\n";
+        assertPrintedGrid(minefield, expectedOutput);
+    }
+    
+    private void assertPrintedGrid(MineField mField, String expectedOutput) {
         try {
-            minefield.printAllGrid();
+            mField.printAllGrid();
             String printedOutput = outputStream.toString();
-            String expectedOutput = """
-                1 2 * 
-                1 * 2 
-                1 1 1 
-                """;
             assertEquals(expectedOutput, printedOutput);
         } finally {
             System.setOut(originalOut);
