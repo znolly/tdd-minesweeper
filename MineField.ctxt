@@ -1,4 +1,14 @@
 #BlueJ class context
 comment0.target=MineField
 comment0.text=\r\n\ Write\ a\ description\ of\ MineField\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-numComments=1
+comment1.params=rows\ cols\ mines
+comment1.target=MineField(int,\ int,\ int)
+comment2.params=
+comment2.target=void\ initializeField()
+comment3.params=
+comment3.target=void\ placeMines()
+comment4.params=
+comment4.target=void\ calculateHints()
+comment5.params=
+comment5.target=void\ printAllGrid()
+numComments=6
