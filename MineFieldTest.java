@@ -60,4 +60,21 @@ public class MineFieldTest {
             System.setOut(originalOut);
         }
     }
+    
+    @Test
+    public void testCalculateHintsFromFixedGrid333() {
+        Object[][] gridProposed = {
+            {0, 0, new Mine(1,2)},          //  0   0   *
+            {0, new Mine(2,2), 0},          //  0   *   0
+            {new Mine(3,1), 0, 0}           //  *   0   0
+        };
+        
+        minefield = new MineField(gridProposed);
+        String expectedOutput = """
+            1 2 * \r
+            2 * 2 \r
+            * 2 1 \r
+            """;
+        assertPrintedGrid(minefield, expectedOutput);
+    }
 }

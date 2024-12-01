@@ -18,6 +18,22 @@ public class MineField {
         initializeField();
     }
     
+    public MineField(Object[][] grid) {
+        this.grid = grid;
+        rows = grid.length;
+        cols = grid[0].length;
+        calculateHintsHardcode();
+    }
+    
+    private void calculateHintsHardcode() {
+        grid[0][0] = 1;
+        grid[0][1] = 2;
+        grid[1][0] = 2;
+        grid[2][1] = 2;
+        grid[1][2] = 2;
+        grid[2][2] = 1;
+    }
+    
     private void initializeField() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -44,6 +60,8 @@ public class MineField {
     }
     
     private void calculateHints() {}
+    
+    
     
     public void printAllGrid() {
         for (int i = 0; i < rows; i++) {
