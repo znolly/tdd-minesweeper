@@ -22,16 +22,7 @@ public class MineField {
         this.grid = grid;
         rows = grid.length;
         cols = grid[0].length;
-        calculateHintsHardcode();
-    }
-    
-    private void calculateHintsHardcode() {
-        grid[0][0] = 1;
-        grid[0][1] = 2;
-        grid[1][0] = 2;
-        grid[2][1] = 2;
-        grid[1][2] = 2;
-        grid[2][2] = 1;
+        calculateHints();
     }
     
     private void initializeField() {
@@ -59,9 +50,32 @@ public class MineField {
         }
     }
     
-    private void calculateHints() {}
+    private void calculateHints() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] instanceof Mine) {
+                    updateNeighbors(i, j);
+                }
+            }
+        }
+    }
     
+    private void updateNeighbors(int row, int col) {
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                int newRow = row + i;
+                int newCol = col + j;
+
+                if (isValidCell(newRow, newCol) && !(grid[newRow][newCol] instanceof Mine)) {
+                    grid[newRow][newCol] = (int) grid[newRow][newCol] + 1;
+                }
+            }
+        }
+    }
     
+    private boolean isValidCell(int row, int col) {
+        return row >= 0 && row < rows && col >= 0 && col < cols;
+    }
     
     public void printAllGrid() {
         for (int i = 0; i < rows; i++) {

@@ -14,4 +14,6 @@ comment5.params=mField\ expectedOutput
 comment5.target=void\ assertPrintedGrid(MineField,\ java.lang.String)
 comment6.params=
 comment6.target=void\ testCalculateHintsFromFixedGrid333()
-numComments=7
+comment7.params=
+comment7.target=void\ testCalculateHintsFromFixedGrid444()
+numComments=8
