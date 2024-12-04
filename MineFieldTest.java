@@ -96,4 +96,24 @@ public class MineFieldTest {
             """;
         assertPrintedGrid(minefield, expectedOutput);
     }
+    
+    @Test
+    public void testPrintRevealedGridInitialState() {
+        MineField mField = new MineField(5, 5, 25);
+        String expectedOutput = """
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            """;
+
+        try {
+            mField.printRevealedGrid();
+            String printedOutput = outputStream.toString();
+            assertEquals(expectedOutput, printedOutput);
+        } finally {
+            System.setOut(originalOut);
+        }
+    }
 }

@@ -17,4 +17,6 @@ comment7.params=row\ col
 comment7.target=boolean\ isValidCell(int,\ int)
 comment8.params=
 comment8.target=void\ printAllGrid()
-numComments=9
+comment9.params=
+comment9.target=void\ printRevealedGrid()
+numComments=10

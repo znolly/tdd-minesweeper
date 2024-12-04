@@ -91,4 +91,15 @@ public class MineField {
             System.out.println();
         }
     }
+    
+    public void printRevealedGrid() {
+        String expectedOutput = """
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            ? ? ? ? ? \r
+            """;
+        System.out.print(expectedOutput);
+    }
 }

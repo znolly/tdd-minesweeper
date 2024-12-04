@@ -16,4 +16,6 @@ comment6.params=
 comment6.target=void\ testCalculateHintsFromFixedGrid333()
 comment7.params=
 comment7.target=void\ testCalculateHintsFromFixedGrid444()
-numComments=8
+comment8.params=
+comment8.target=void\ testPrintRevealedGridInitialState()
+numComments=9
