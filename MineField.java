@@ -28,7 +28,7 @@ public class MineField {
     private void initializeField() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                grid[i][j] = "0";
+                grid[i][j] = 0;
             }
         }
         placeMines();

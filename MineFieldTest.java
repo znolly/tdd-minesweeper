@@ -99,7 +99,7 @@ public class MineFieldTest {
     
     @Test
     public void testPrintRevealedGridInitialState() {
-        MineField mField = new MineField(5, 5, 25);
+        minefield = new MineField(5, 5, 5);
         String expectedOutput = """
             ? ? ? ? ? \r
             ? ? ? ? ? \r
@@ -109,7 +109,7 @@ public class MineFieldTest {
             """;
 
         try {
-            mField.printRevealedGrid();
+            minefield.printRevealedGrid();
             String printedOutput = outputStream.toString();
             assertEquals(expectedOutput, printedOutput);
         } finally {
