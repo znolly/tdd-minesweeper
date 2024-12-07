@@ -41,17 +41,17 @@ public class MineFieldTest {
     public void testPrintAllMineField3Rows3Cols9Mines() {
         MineField minefield = new MineField(3, 3, 9);
         String expectedOutput = "* * * \r\n* * * \r\n* * * \r\n";
-        assertPrintedGrid(minefield, expectedOutput);
+        assertPrintedGrid(expectedOutput, minefield);
     }
     
     @Test
     public void testPrintAllMineField4Rows4Cols16Mines() {
         minefield = new MineField(4, 4, 16);
         String expectedOutput = "* * * * \r\n* * * * \r\n* * * * \r\n* * * * \r\n";
-        assertPrintedGrid(minefield, expectedOutput);
+        assertPrintedGrid(expectedOutput, minefield);
     }
     
-    private void assertPrintedGrid(MineField mField, String expectedOutput) {
+    private void assertPrintedGrid(String expectedOutput, MineField mField) {
         try {
             mField.printAllGrid();
             String printedOutput = outputStream.toString();
@@ -75,7 +75,7 @@ public class MineFieldTest {
             2 * 2 \r
             * 2 1 \r
             """;
-        assertPrintedGrid(minefield, expectedOutput);
+        assertPrintedGrid(expectedOutput, minefield);
     }
     
     @Test
@@ -94,7 +94,7 @@ public class MineFieldTest {
             2 * 2 1 \r
             * 2 1 0 \r
             """;
-        assertPrintedGrid(minefield, expectedOutput);
+        assertPrintedGrid(expectedOutput, minefield);
     }
     
     @Test
